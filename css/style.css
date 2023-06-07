@@ -1,0 +1,121 @@
+div.card {
+    height: 40rem;
+    width: 25rem;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 10px 10px 5px lightgrey;
+    position: relative;
+}
+
+.top-corner {
+    height: 9rem;
+    width: 5rem;
+    position:absolute;
+    top:0;
+    left:0;    
+} 
+
+   .bottom-corner {
+    height: 9rem;
+    width: 5rem;
+    transform: rotate(180deg);
+    position: absolute;
+    bottom:0;
+    right:0;
+} 
+
+
+.letter {
+    width: 100%;
+    height: 50%;
+    /* border: 2px solid green; */
+    font-size: 5rem;
+    text-align: center;
+}
+
+.icon {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    font-size: 6rem;
+}
+
+.middle {
+    width: 10rem;
+    height: 14rem;
+    /* border: 2px solid; */
+    position:absolute;
+    left: 7.5rem;
+    top: 11rem;
+    text-align: center;
+    font-size: 15rem;
+}
+
+/*common declarations*/
+.club, .spade {color:black;}
+.heart, .diamond {color:red;}
+
+
+/* card pack creation */
+
+.card-pack {
+    position: absolute;
+       
+}
+
+.card.club.ace {position: absolute; top:10rem; left:30rem; transform: rotate(-20deg); }
+.card.club.two {position: absolute; top:10rem; left:35rem; transform: rotate(-10deg); }
+.card.spade.ace {position: absolute; top:10rem; left:40rem; transform: rotate(0deg); }
+.card.heart.ace {position: absolute; top:10rem; left:45rem; transform: rotate(10deg); }
+.card.diamond.ace {position: absolute; top:10rem; left:50rem; transform: rotate(20deg); }
+
+
+/* There are 3 animations to choose from */
+
+@keyframes card-selection {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50rem,0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+@keyframes card-pop-out {
+    0% {
+        transform: none;
+        z-index: 1;
+    }
+
+    100% {
+        transform:scale(1.25);
+        z-index: 1;
+        
+    }
+}
+
+@keyframes card-shuffle {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(30rem,0);
+    } 
+
+    100% {
+        transform: translate(-20rem, 0);
+        z-index: -1;            
+    }
+}
+
+
+/* .card:hover { animation: card-selection 2s linear alternate;} */
+.card:hover { animation: card-pop-out 0.75s linear;}
+/* .card:hover { animation: card-shuffle 2s linear;} */
