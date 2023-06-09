@@ -117,5 +117,5 @@ div.card {
 
 
 /* .card:hover { animation: card-selection 2s linear alternate;} */
-.card:hover { animation: card-pop-out 0.75s linear;}
-/* .card:hover { animation: card-shuffle 2s linear;} */
+/* .card:hover { animation: card-pop-out 0.75s linear;} */
+.card:hover { animation: card-shuffle 2s linear;}
